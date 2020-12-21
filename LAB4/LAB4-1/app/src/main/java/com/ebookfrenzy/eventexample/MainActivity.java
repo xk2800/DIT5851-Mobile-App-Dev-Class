@@ -39,7 +39,7 @@ public class MainActivity extends AppCompatActivity
                     }
                 }
         );
-
+//
         button.setOnLongClickListener(
                 new Button.OnLongClickListener() {
                     public boolean onLongClick(View v) { //longclick
