@@ -38,7 +38,7 @@ public class MainActivity extends AppCompatActivity
                         statusText.setText("Button clicked"); //message shown when button is clicked
                     }
                 }
-        );
+        );//
 //
         button.setOnLongClickListener(
                 new Button.OnLongClickListener() {
