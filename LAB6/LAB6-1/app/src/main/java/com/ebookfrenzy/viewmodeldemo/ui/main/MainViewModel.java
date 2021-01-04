@@ -4,7 +4,7 @@ import androidx.lifecycle.ViewModel;
 
 public class MainViewModel extends ViewModel {
 
-    private static final Float usd_to_eu_rate = 0.74F;
+    private static final Float usd_to_eu_rate = 4.01F;
     private String dollarText = "";
     private Float result = 0F;
     public void setAmount(String value) {
