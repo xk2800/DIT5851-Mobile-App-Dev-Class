@@ -8,4 +8,6 @@
     <string name="delete">Delete</string>
     <string name="find">Find</string>
     <string name="textview">TextView</string>
+    <string name="product_price">Product Price</string>
+    <!--<string name="product_price">Product Price</string>-->
 </resources>
