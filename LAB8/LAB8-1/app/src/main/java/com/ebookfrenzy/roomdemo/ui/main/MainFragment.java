@@ -31,6 +31,7 @@ public class MainFragment extends Fragment {
     private TextView productId;
     private EditText productName;
     private EditText productQuantity;
+    private EditText productPrice;
 
 
     public static MainFragment newInstance() {
@@ -51,6 +52,7 @@ public class MainFragment extends Fragment {
         productId = getView().findViewById(R.id.productID);
         productName = getView().findViewById(R.id.productName);
         productQuantity = getView().findViewById(R.id.productQuantity);
+        productPrice = getView().findViewById(R.id.productPrice);
         listenerSetup();
         observerSetup();
         recyclerSetup();
@@ -66,9 +68,10 @@ public class MainFragment extends Fragment {
             public void onClick(View view) {
                 String name = productName.getText().toString();
                 String quantity = productQuantity.getText().toString();
+                String price = productPrice.getText().toString();
                 if (!name.equals("") && !quantity.equals("")) {
                     Product product = new Product(name,
-                            Integer.parseInt(quantity));
+                            Integer.parseInt(quantity), Double.parseDouble(price));
                     mViewModel.insertProduct(product);
                     clearFields();
                 } else {
@@ -107,6 +110,8 @@ public class MainFragment extends Fragment {
                             productName.setText(products.get(0).getName());
                             productQuantity.setText(String.format(Locale.US, "%d",
                                     products.get(0).getQuantity()));
+                            productPrice.setText(String.format(Locale.US, "%.2f",
+                                    products.get(0).getPrice()));
                         } else {
                             productId.setText("No Match");
                         } }
@@ -125,6 +130,7 @@ public class MainFragment extends Fragment {
         productId.setText("");
         productName.setText("");
         productQuantity.setText("");
+        productPrice.setText("");
     }
 
 }
